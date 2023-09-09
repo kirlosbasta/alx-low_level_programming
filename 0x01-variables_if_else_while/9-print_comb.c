@@ -13,8 +13,11 @@ int main(void)
 	while (i <= 9)
 	{
 		putchar ('0' + i);
-		putchar (44);
-		putchar (32);
+		if (i != 9)
+		{
+			putchar (44);
+			putchar (32);
+		}
 		i++;
 	}
 	putchar ('\n');
