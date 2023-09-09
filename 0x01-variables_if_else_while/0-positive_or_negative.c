@@ -6,7 +6,6 @@
 /* betty style doc for function main goes there */
 /**
  * main - Gives if a number is positive or negative
- * @n: Random number
  *
  * Description: This function tell us if the a random number is positive or not
  * Return: A string that declare if the number is positive or not
