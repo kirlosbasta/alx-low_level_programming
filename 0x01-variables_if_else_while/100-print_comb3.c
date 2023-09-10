@@ -20,8 +20,11 @@ int main(void)
 		{
 			putchar ('0' + i);
 			putchar ('0' + n);
-			putchar (',');
-			putchar (' ');
+			if (i != 8 || n != 9)
+			{
+				putchar (',');
+				putchar (' ');
+			}
 		}
 	}
 	putchar ('\n');
