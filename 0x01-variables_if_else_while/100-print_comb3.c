@@ -3,26 +3,26 @@
 /**
  * main - Entry point
  *
- * Description: Prints the combination of two digit and digit i not equal to digit e
- * Retutn: 0
+ * Description: Prints the combination of two digit
+ * and digit i not equal to digit e
+ *
+ * Return: terminating the program
  */
+
 int main(void)
 {
-	int i = 0;
-	int n = 0;
+	int i;
+	int n;
 
-	while (i <= 9)
+	for (i = 0; i < 10; i++)
 	{
-		putchar (i);
-		while (n <= 9)
+		for (n = 1 + i; n < 10; n++)
 		{
-			if (i != n)
-			{
-				putchar (n);
-			}
+			putchar ('0' + i);
+			putchar ('0' + n);
+			putchar (',');
+			putchar (' ');
 		}
-		putchar(',');
-		putchar(' ');
 	}
 	putchar ('\n');
 	return (0);
