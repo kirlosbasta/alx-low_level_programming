@@ -1,40 +1,33 @@
 #include <stdio.h>
 
 /**
- * main - Entry point
+ * main - Entry poinr
  *
- * Description: Prints two sets of two digit numbers
- *should be separated by space and ends with comma and space
- *
+ * Description: print two set of two numbers
+ * in ascending order
  * Return: Exit point
  */
 int main(void)
 {
-	int i1, i2, j1, j2;
+	int i, j;
 
-	for (i1 = 0; i1 < 10; i1++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (i2 = 0; i2 < 10; i2++)
+		for (j = i + 1; j <= 99; j++)
 		{
-			for (j1 = 0; j1 < 10; j1++)
+			putchar(i / 10 + '0');
+			putchar(i % 10 + '0');
+			putchar(' ');
+			putchar(j / 10 + '0');
+			putchar(j % 10 + '0');
+			if (i != 98 || j != 99)
 			{
-				for (j2 = 1; j2 < 10; j2++)
-				{
-					putchar ('0' + i1);
-					putchar ('0' + i2);
-					putchar (' ');
-					putchar ('0' + j1);
-					putchar ('0' + j2);
-					if (i1 != 9 || i2 != 8 || j1 != 9 || j2 != 9)
-					{
-						putchar (',');
-						putchar (' ');
-					}
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
-	putchar ('\n');
-	return (0);
 
+	return (0);
 }
+
