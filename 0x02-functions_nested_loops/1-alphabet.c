@@ -12,7 +12,7 @@
  * Description: Prints the alphabets in lowercase 
  * Return: Always 0
  */
-/*void print_alphabet(void)
+void print_alphabet(void)
 {
 	char c = 'a';
 
@@ -21,10 +21,11 @@
 		_putchar(c);
 		c++;
 	}
-}*/
-int main(void)
+	_putchar('\n');
+}
+/*int main(void)
 {
 	print_alphabet();
 	_putchar('\n');
 	return (0);
-}
+}*/
