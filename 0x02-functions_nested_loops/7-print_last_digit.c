@@ -1,3 +1,4 @@
+int _putchar(char c);
 /**
  * print_last_digit - Prints last digit
  * @n: parameter int
@@ -9,5 +10,16 @@ int print_last_digit(int n)
 {
 	int i = n % 10;
 
-	return (i);
+	if (n > 0)
+	{
+		i *= 1;
+		_putchar('0' + i);
+		return (i);
+	}
+	else
+	{
+		i *= -1;
+		_putchar('0' + i);
+		return(i);
+	}
 }
