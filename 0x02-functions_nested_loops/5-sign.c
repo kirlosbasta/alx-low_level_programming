@@ -1,3 +1,4 @@
+int _putchar(char c);
 /**
  * print_sign - Print the sign
  * @n: number
@@ -11,7 +12,7 @@ int print_sign(int n)
 {
 	if (n > 0)
 	{
-		_putchar ('+');
+		_putchar('+');
 		return (1);
 	}
 	else if (n == 0)
