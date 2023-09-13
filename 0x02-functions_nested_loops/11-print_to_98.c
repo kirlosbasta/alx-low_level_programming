@@ -14,7 +14,7 @@ void print_to_98(int n)
 	{
 		while (n < 0)
 		{
-			n *= -1;
+			n = -n;
 			_putchar('-');
 			_putchar('0' + n);
 			_putchar(',');
