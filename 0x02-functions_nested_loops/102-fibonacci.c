@@ -7,16 +7,16 @@
  */
 int main(void)
 {
-	int i = 0;
-	int n = 1;
-	int j = 2;
-	int last;
+	int i = 3;
+	long int n = 1;
+	long int j = 2;
+	long int last;
 
 	printf("1, 2, ");
 	while (i <= 50)
 	{
 		last = n + j;
-		printf("%d", last);
+		printf("%ld", last);
 		if (i < 50)
 		{
 			printf(", ");
