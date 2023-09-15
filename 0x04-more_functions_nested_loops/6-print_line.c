@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * print_line - Print _ numbers of n
  * @n: number of the underscore printed
@@ -10,7 +11,7 @@ void print_line(int n)
 
 	while (n > i)
 	{
-		_putchat('_');
+		_putchar('_');
 		i++;
 	}
 	_putchar('\n');
