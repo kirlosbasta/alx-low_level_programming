@@ -59,6 +59,6 @@ void _puts(char *str)
 
 void rev_string(char *s)
 {
-	/*_puts(s);*/
+	_puts(s);
 	print_rev(s);
 }
