@@ -31,11 +31,17 @@ void puts_half(char *str)
 	{
 		if (len % 2 == 1)
 		{
-			len -= 1;
+			if (i > len / 2)
+			{
+				_putchar(str[i]);
+			}
 		}
-		if (i >= len / 2)
+		else if (len % 2 == 0)
 		{
-			_putchar(str[i]);
+			if (i >= len / 2)
+			{
+				_putchar(str[i]);
+			}
 		}
 	}
 	_putchar('\n');
