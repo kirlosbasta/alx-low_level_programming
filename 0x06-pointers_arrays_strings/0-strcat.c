@@ -20,5 +20,6 @@ char *_strcat(char *dest, char *src)
 		counter++;
 		src++;
 	}
+	*counter = '\0';
 	return (dest);
 }
