@@ -3,7 +3,7 @@
 /**
  * print_number - print the number n
  * @n: integer
- * Return Nothing
+ * Return: Nothing
  */
 
 void print_number(int n)
@@ -27,3 +27,4 @@ void print_number(int n)
 		div /= 10;
 	}
 }
+
