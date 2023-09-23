@@ -11,12 +11,8 @@ int _atoi(char *s)
 	int i, digit;
 	int check = 0;
 	int sign = 1;
-	int res = 0;
-	/**
-	 * for loop to iterate through the string
-	 * if the letter is - or +  multibly by 1 or -1
-	 * if there are no number return 0
-	 * */
+	unsigned int res = 0;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] == '-')
@@ -28,7 +24,6 @@ int _atoi(char *s)
 			digit = s[i] - '0';
 			res = res * 10 + digit;
 			check++;
-		
 			if (s[i + 1] < '0' || s[i + 1] > '9')
 			{
 				break;
