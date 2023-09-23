@@ -3,15 +3,13 @@
 
 /**
  * main - Entry point
- * 
+ *
  * Return: always 0
  */
 int main(void)
 {
 	int i;
 
-	i = prime_factor(1231952);
-	printf("%d\n", i);
 	i = prime_factor(612852475143);
 	printf("%d\n", i);
 
