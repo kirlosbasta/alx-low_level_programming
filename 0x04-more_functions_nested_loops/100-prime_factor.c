@@ -8,8 +8,13 @@
  */
 int main(void)
 {
-	prime_factor(1231952);
-	prime_factor(612852475143);
+	int i;
+
+	i = prime_factor(1231952);
+	printf("%d\n", i);
+	i = prime_factor(612852475143);
+	printf("%d\n", i);
+
 	return (0);
 }
 
@@ -20,13 +25,15 @@ int main(void)
  */
 int prime_factor(long num)
 {
-	int n = prime_number(num);
+	long *n = &num;
+	int j = prime_number(*n);
 
-	while (num / n != 1)
+	while (*n / j != 1)
 	{
-		num /= n;
+		*n /= j;
+		j = prime_number(*n);
 	}
-	return (n);
+	return (j);
 }
 /**
  * prime_number - give the prime number until reaching prime
@@ -42,9 +49,9 @@ int prime_number(long prime)
 	{
 		if (prime % i == 0)
 		{
-			return (i);
 			break;
 		}
-	}
-}
 
+	}
+	return (i);
+}
