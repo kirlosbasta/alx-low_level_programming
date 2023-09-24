@@ -19,13 +19,13 @@ int main(void)
  */
 void fibonacci98(void)
 {
-	unsigned long i = 1;
+	unsigned long i = 0;
 	unsigned long i1, i2, j1, j2, h1, h2;
-	unsigned long j = 2;
+	unsigned long j = 1;
 	unsigned long  sum = 0;
 	int a;
 
-	for  (a = 0; a < 90; a++)
+	for  (a = 0; a < 92; a++)
 	{
 		sum = i + j;
 		i = j;
@@ -37,7 +37,7 @@ void fibonacci98(void)
 	j1 = j / 10000000000;
 	j2 = j % 10000000000;
 	
-	for (; a < 96; a++)
+	for (; a < 98; a++)
 	{
 		h1 = i1 + j1;
 		h2 = i2 + j2;
@@ -47,7 +47,7 @@ void fibonacci98(void)
 			h2 %= 10000000000;
 		}
 		printf ("%lu%lu", h1, h2);
-		if (a != 95)
+		if (a != 97)
 		{
 			printf(", ");
 
