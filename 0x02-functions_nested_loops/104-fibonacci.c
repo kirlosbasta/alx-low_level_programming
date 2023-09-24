@@ -36,7 +36,7 @@ void fibonacci98(void)
 	i2 = i % 10000000000;
 	j1 = j / 10000000000;
 	j2 = j % 10000000000;
-	
+
 	for (; a < 98; a++)
 	{
 		h1 = i1 + j1;
@@ -46,7 +46,7 @@ void fibonacci98(void)
 			h1 += 1;
 			h2 %= 10000000000;
 		}
-		printf ("%lu%lu", h1, h2);
+		printf("%lu%lu", h1, h2);
 		if (a != 97)
 		{
 			printf(", ");
