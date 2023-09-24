@@ -19,18 +19,18 @@ int main(void)
  */
 void fibonacci98(void)
 {
-	int i = 1;
-	int j = 2;
-	unsigned long sum = 0;
+	unsigned long i = 1;
+	unsigned long j = 2;
+	unsigned long  sum = 0;
 	int a;
 
-	for  (a = 0; a < 98; a++)
+	for  (a = 0; a < 92; a++)
 	{
 		sum = i + j;
 		i = j;
 		j = sum;
 		printf("%lu", sum);
-		if (a != 97)
+		if (a != 91)
 		{
 			printf(", ");
 		}
