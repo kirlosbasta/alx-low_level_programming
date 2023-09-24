@@ -17,17 +17,13 @@ void print_number(int n)
 		ui =  -n;
 		_putchar('-');
 	}
-	if (n == 0)
-	{
-		_putchar('0');
-	}
 /*get the multiplycation of 10*/
 	while (ui / m > 9)
 	{
 		m *= 10;
 	}
 /*print the first digit and so on*/
-	while (ui != 0)
+	while (m != 0)
 	{
 		j = ui / m;
 		_putchar(j + '0');
