@@ -23,6 +23,7 @@ int even_fibonacci(void)
 {
 	int i = 1;
 	int j = 2;
+	int n;
 	int sum = 0;
 
 	while (sum <= 4000000)
@@ -31,9 +32,9 @@ int even_fibonacci(void)
 		{
 			sum = i + j;
 		}
-		int n = i + j;
+		n = i + j;
 		i = j;
-		j = sum;
+		j = n;
 	}
 	return (sum);
 }
