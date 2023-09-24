@@ -11,3 +11,4 @@ void print_square(int size);
 void print_triangle(int size);
 int prime_number(long prime);
 int prime_factor(long num);
+void print_number(int n);
