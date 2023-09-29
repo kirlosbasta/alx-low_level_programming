@@ -23,7 +23,7 @@ int is_prime_number(int n)
 /**
  * prime_number - Helps is_prime_number
  * @n: An integer to check
- * @i: An integer 
+ * @i: An integer
  * Return: The first prime number
  */
 
@@ -37,8 +37,8 @@ int prime_number(int n, int i)
 	{
 		return (0);
 	}
-	else 
+	else
 	{
-		return prime_number(n, i + 1);
+		return (prime_number(n, i + 1));
 	}
 }
