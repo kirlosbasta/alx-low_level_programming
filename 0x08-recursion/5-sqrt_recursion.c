@@ -26,9 +26,9 @@ int helper(int n, int i)
 	}
 	else if (i * i == n)
 	{
-		return i;
+		return (i);
 	}
-	else 
+	else
 	{
 		return (helper(n, i + 1));
 	}
