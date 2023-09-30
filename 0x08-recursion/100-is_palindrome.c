@@ -22,7 +22,7 @@ int helper_palindrome(char *s, int i, int length)
 {
 	int len = length - (i + 1);
 
-	if (i > len / 2)
+	if (i > length / 2)
 	{
 		return (1);
 	}
