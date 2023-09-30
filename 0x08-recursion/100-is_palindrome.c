@@ -12,9 +12,10 @@ int is_palindrome(char *s)
 }
 
 /**
- * helper - helps is_palindrome
+ * helper_palindrome - helps is_palindrome
  * @s: Pointer to string
- * @index: The index
+ * @i: The index
+ * @length: The length of the string
  * Return: 1 if palindorm and 0 if not
  */
 int helper_palindrome(char *s, int i, int length)
@@ -33,11 +34,11 @@ int helper_palindrome(char *s, int i, int length)
 	{
 		return (helper_palindrome(s, i + 1, length));
 	}
-	return(-1);
+	return (-1);
 }
 
 /**
- * strlen - get the length of a string
+ * _strlen - get the length of a string
  * @s: Pointer to string
  * Return: The length of a string
  */
@@ -48,10 +49,10 @@ int _strlen(char *s)
 
 	if (s[0] == '\0')
 	{
-		return count;
+		return (count);
 	}
 	else
 	{
-		return count = _strlen(s + 1) + 1;
+		return (count = _strlen(s + 1) + 1);
 	}
 }
