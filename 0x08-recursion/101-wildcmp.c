@@ -11,7 +11,7 @@
 
 int wildcmp(char *s1, char *s2)
 {
-	return (wildcmp_helper(s1, s2, 0, _strlen_recursion(s1), _strlen_recursion(s2)));
+	return (wildcmp_helper(s1, s2, 0, _strlen(s1), _strlen(s2)));
 }
 
 /**
@@ -20,13 +20,13 @@ int wildcmp(char *s1, char *s2)
  * Return: The length of the string
  */
 
-int _strlen_recursion(char *s)
+int _strlen(char *s)
 {
 	if (s[0] == '\0')
 	{
 		return (0);
 	}
-	return (_strlen_recursion(s + 1) + 1);
+	return (_strlen(s + 1) + 1);
 }
 
 /**
@@ -58,6 +58,16 @@ int wildcmp_helper(char *s1, char *s2, int i, int len1, int len2)
 	}
 	return (0);
 }
+
+/**
+ * wildcard_handler - Handle the astersik
+ * @s1: pointer to string
+ * @s2: pointer to string
+ * @i1: last index of s1
+ * @i2: last index of s2
+ * Return: 1 if every charcter after the * is the same
+ * in both string starting from the end to the astrisk
+ */
 
 int wildcard_handler(char *s1, char *s2, int i1, int i2)
 {
