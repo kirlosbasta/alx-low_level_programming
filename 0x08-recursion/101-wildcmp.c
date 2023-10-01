@@ -15,7 +15,7 @@ int wildcmp(char *s1, char *s2)
 }
 
 /**
- * _strlen_recursion - Print the length of a string
+ * _strlen - Print the length of a string
  * @s: Pointer to string
  * Return: The length of the string
  */
