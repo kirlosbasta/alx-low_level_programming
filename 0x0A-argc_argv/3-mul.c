@@ -10,7 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-	int i, sum = 1;
+	int i;
+	long sum = 1;
 
 	if (argc == 1)
 	{
@@ -21,6 +22,6 @@ int main(int argc, char *argv[])
 	{
 		sum *= atoi(argv[i]);
 	}
-	printf("%d\n", sum);
+	printf("%ld\n", sum);
 	return (0);
 }
