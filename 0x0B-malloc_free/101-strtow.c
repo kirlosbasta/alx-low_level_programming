@@ -19,13 +19,13 @@ char **strtow(char *str)
 
 	indexptr = &index;
 	wiptr = &wi;
-	len = count_words(str);
-	s = malloc(sizeof(char *) * (len + 1));
+	len = count_words(str) + 1;
+	s = malloc(sizeof(char *) * len);
 	if (s == NULL || len == 0)
 	{
 		return (NULL);
 	}
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
 		wordlen = word_len(str, indexptr);
 		s[i] = malloc(sizeof(char) * (wordlen + 1));
