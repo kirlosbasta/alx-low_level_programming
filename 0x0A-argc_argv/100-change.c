@@ -1,7 +1,6 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
  * main - print the minimum number of coins
  * to make change for an amount of money
@@ -10,7 +9,6 @@
  *
  * Return: 0 on success and  1 in failure
  */
-
 int main(int argc, char **argv)
 {
 	int cents;
@@ -25,7 +23,7 @@ int main(int argc, char **argv)
 	if (cents <= 0)
 	{
 		printf("0\n");
-		return(0);
+		return (0);
 	}
 	while (cents >= 25)
 	{
@@ -48,10 +46,8 @@ int main(int argc, char **argv)
 		cents -= 2;
 	}
 	while (cents >= 1)
-	{
 		counter++;
 		cents -= 1;
-	}
 	printf("%d\n", counter);
 	return (0);
 }
