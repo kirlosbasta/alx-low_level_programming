@@ -46,8 +46,9 @@ int main(int argc, char **argv)
 		cents -= 2;
 	}
 	while (cents >= 1)
+	{
 		counter++;
-		cents -= 1;
+		cents -= 1; }
 	printf("%d\n", counter);
 	return (0);
 }
