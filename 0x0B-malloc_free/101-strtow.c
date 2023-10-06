@@ -21,7 +21,7 @@ char **strtow(char *str)
 	wiptr = &wi;
 	len = count_words(str);
 	s = malloc(sizeof(char *) * (len + 1));
-	if (s == NULL || len == 0)
+	if (s == NULL || len <= 1)
 	{
 		free(s);
 		return (NULL);
