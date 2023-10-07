@@ -48,6 +48,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			s[j] = s2[k];
 		}
 	}
+	else 
+		return (s);
 	s[j] = '\0';
 	return (s);
 }
@@ -61,6 +63,10 @@ int _strlen(char *s)
 {
 	int i = 0;
 
+	if (s == NULL)
+	{
+		return (0);
+	}
 	while (s[i] != 0)
 	{
 		i++;
