@@ -5,9 +5,14 @@
             "label": "C/C++: gcc build active file",
             "command": "/usr/bin/gcc",
             "args": [
-                "-fdiagnostics-color=always",
                 "-g",
+                "-Wall",
+                "-Werror",
+                "-Wextra",
+                "-pedantic",
+                "-std=gnu89",
                 "${file}",
+                "*main.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],
