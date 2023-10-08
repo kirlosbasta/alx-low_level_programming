@@ -27,7 +27,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			return (NULL);
 		}
 	}
-	if (new_size == 0)
+	if (new_size == 0 && ptr != NULL)
 	{
 		free(ptr);
 		return (NULL);
@@ -37,7 +37,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	{
 		return (NULL);
 	}
-	/*_memcpy(new_ptr, ptr, old_size);*/
+	_memcpy(new_ptr, ptr, old_size);
 	free(ptr);
 	return (new_ptr);
 }
@@ -48,7 +48,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  * @src: pointer to sourc pointer
  * @n: The size of bytes to copy from src
  * Return: pointer to dest
- 
+ */
 
 void *_memcpy(char *dest, char *src, unsigned int n)
 {
@@ -56,10 +56,7 @@ void *_memcpy(char *dest, char *src, unsigned int n)
 
 	for (i = 0; i < n; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		*(dest + i) = *(src + i);
 	}
 	return (dest);
 }
-*/
