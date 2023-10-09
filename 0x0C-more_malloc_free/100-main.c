@@ -32,23 +32,31 @@ void simple_print_buffer(char *buffer, unsigned int size)
 }
 
 /**
- * main - check the code for
+ * main - check the code
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
-    char *p;
-    int i;
+	char *p;
+	unsigned int i;
+	unsigned int new_size;
 
-    p = malloc(sizeof(char) * 10);
-    p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
-    i = 0;
-    while (i < 98)
-    {
-        p[i++] = 98;
-    }
-    simple_print_buffer(p, 98);
-    free(p);
-    return (0);
+	new_size = 0;
+	p = malloc(sizeof(char) * 30);
+	p = _realloc(p, sizeof(char) * 30, sizeof(char) * new_size);
+	if (p == NULL)
+	{
+		printf("Failed\n");
+		return (1);
+	}
+	i = 0;
+	while (i < new_size)
+	{
+		p[i++] = 98;
+	}
+	simple_print_buffer(p, new_size);
+	free(p);
+	return (0);
 }
