@@ -12,8 +12,6 @@
                 "-pedantic",
                 "-std=gnu89",
                 "${file}",
-                "_putchar.c",
-                "*main.c",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
             ],

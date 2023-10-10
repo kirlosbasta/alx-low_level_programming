@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -11,9 +12,10 @@
 
 int main(int argc, char *argv[])
 {
-	char *error = "Error\n";
-	char *s1 = max(argv[1],argv[2]);
-	char *s2 = min(argv[1], argv[2]);
+	char *error = "Error";
+	char *s1;
+	char *s2;
+	char *res;
 
 	if (argc != 3)
 	{
@@ -25,6 +27,11 @@ int main(int argc, char *argv[])
 		print_string(error);
 		exit(98);
 	}
+	s1 = max(argv[1], argv[2]);
+	s2 = min(argv[1], argv[2]);
+	res = mul(s1, s2);
+	rev_string(res);
+	print_string(res);
 	return (0);
 }
 
@@ -46,7 +53,7 @@ int _strlen(char *s)
 }
 
 /**
- * isdigit - checks if an string digits only
+ * _isdigit - checks if an string digits only
  * @str: pointer to string
  *
  * Return: 0 if all digit and 1 there is a non integer value
@@ -78,6 +85,7 @@ void print_string(char *str)
 		_putchar(*str);
 		str++;
 	}
+	_putchar('\n');
 }
 
 /**
@@ -110,14 +118,14 @@ char *min(char *s1, char *s2)
 
 char *max(char *s1, char *s2)
 {
-        if (_strlen(s1) > _strlen(s2))
-        {
-                return (s1);
-        }
-        else
-        {
-                return (s2);
-        }
+	if (_strlen(s1) >= _strlen(s2))
+	{
+		return (s1);
+	}
+	else
+	{
+		return (s2);
+	}
 }
 
 /**
@@ -130,8 +138,8 @@ char *max(char *s1, char *s2)
 
 char *mul(char *s1, char *s2)
 {
-	int len1, len2, i, j, ca, num;
-	char *layers[];
+	int len1, len2, i, j, ca, num, k;
+	char **layers;
 
 	len1 = _strlen(s1);
 	len2 = _strlen(s2);
@@ -141,6 +149,7 @@ char *mul(char *s1, char *s2)
 		free(layers);
 		return (NULL);
 	}
+	/* iterate form first pointer to the last one in the array*/
 	for (i = 0; i < len2; i++)
 	{
 		layers[i] = malloc(sizeof(char) * (len1 + i + 2));
@@ -154,14 +163,96 @@ char *mul(char *s1, char *s2)
 			return (NULL);
 		}
 		ca = 0;
-		/*put the zero for each layer except first one*/
+			/* put the zero for each layer except first one*/
+			if (i > 0)
+			{
+				for (k = i; k > 0; k--)
+				{
+					layers[i][j] = '0';
+					j++;
+				}
+			}
 		for (j = 0; j < len1; j++)
 		{
+
+	/* Multiply the two nums and save in string layers[i]*/
 			num = (s1[len1 - j - 1] - '0') *\
 			      (s2[len2 - i - 1] - '0') + ca;
 			layers[i][j] = (num % 10) + '0';
 			ca = num / 10;
 		}
-		layers[i][j] = ca + '0';
+		if (ca > 0)
+		{
+			layers[i][j] = ca + '0';
+		}
 		layers[i][j + 1] = '\0';
 	}
+	return (add(layers, len2));
+}
+
+/**
+ * add - Add the digits of the string in the array
+ * @arr: array of pointer to strings
+ * @mem: Number of members of the array
+ *
+ * Return: Pointer to string
+ */
+
+char *add(char *arr[], int mem)
+{
+	int i, j, biggest, ca, temp, max_index;
+	char *sum;
+
+	biggest = _strlen(arr[mem - 1]) + 1;
+	sum = malloc(sizeof(char) * biggest);
+	for (i = 0; i < biggest - 1; i++)
+	{
+		sum[i] = '0';
+	}
+	for (i = 0; i < mem; i++)
+	{
+		ca = 0;
+		temp = 0;
+		max_index = _strlen(arr[i]);
+		for (j = 0; j < max_index; j++)
+		{
+			temp = (arr[i][j] - '0') + (sum[j] - '0') + ca;
+			sum [j] =temp % 10 + '0';
+			ca = temp / 10;
+		}
+	}
+	sum[biggest] = '\0';
+	return (sum);
+}
+
+/**
+ *_putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+		return (write(1, &c, 1));
+}
+
+/**
+ * rev_string - printthe string and it reverse
+ * @s: Poiinter to string
+ * Return: Nothing
+ */
+
+void rev_string(char *s)
+{
+	int len = _strlen(s);
+	int i;
+
+	for (i = 0; i < len / 2; i++)
+	{
+		char temp = s[i];
+
+		s[i] = s[len - 1 - i];
+		s[len - 1 - i] = temp;
+	}
+}
