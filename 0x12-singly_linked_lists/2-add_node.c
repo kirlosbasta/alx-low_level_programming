@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_code - Add str and it's length to a list
+ * add_node - Add str and it's length to a list
  * @head: The address of the head
  * @str: String to be added to the new node
  *
