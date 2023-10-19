@@ -12,7 +12,7 @@
                 "-Wextra",
                 "-pedantic",
                 "-std=gnu89",
-                "0-print_list.c",
+                "main.c",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
