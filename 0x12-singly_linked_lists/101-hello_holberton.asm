@@ -1,22 +1,26 @@
 ; File: 101-hello_holberton.asm
 ; Auth: Kirlos Basta
 ; Desc: 64-bit assembly program that prints
-; Hello, Holberton followed by a new line.section .data
+; Hello, Holberton followed by a new line.
 
-    hello db "Hello, Holberton", 10, 0
+extern printf
 
 section .text
-    global main
-    extern printf
+   global main
 
-    main:
-        push rbp
-        mov rbp, rsp
+main:
+   push rbp
 
-        lea rdi, [hello]
-        xor eax, eax
-        call printf
+   mov rdi,fmt
+   mov rsi,msg
+   mov rax,0
+   call printf
 
-        mov rsp, rbp
-        pop rbp
-        ret
+   pop rbp
+
+   mov rax,0
+   ret
+
+section .data
+   msg: db "Hello, Holberton", 0
+   fmt: db "%s", 10, 0
