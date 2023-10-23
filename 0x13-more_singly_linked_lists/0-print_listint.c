@@ -4,7 +4,7 @@
  * print_listint - print the element of a list
  * @h: the head of the list
  *
- * Return: NUmber of node 
+ * Return: NUmber of node
  */
 
 size_t print_listint(const listint_t *h)
@@ -15,7 +15,7 @@ size_t print_listint(const listint_t *h)
 	{
 		printf("%d\n", h->n);
 		h = h->next;
-		counter++;		
+		counter++;
 	}
 	return (counter);
 }
