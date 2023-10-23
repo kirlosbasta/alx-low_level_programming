@@ -6,7 +6,7 @@
       "type": "cppdbg",
       "request": "launch",
       "args": [],
-      "stopAtEntry": true,
+      "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/home/koko/KOKO/ALX/alx-low_level_programming/0x13-more_singly_linked_lists",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
