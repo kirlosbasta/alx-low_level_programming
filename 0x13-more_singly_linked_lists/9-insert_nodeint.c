@@ -12,7 +12,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *tmp, *node;
-	unsigned int i, len;
+	unsigned int i, len = 0;
 
 	/*Get the length of the list*/
 	tmp = *head;
@@ -33,6 +33,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	}
 	/*Travel to the node index*/
 	tmp = *head;
+	if (idx == 0)
+	{
+	node->n = n;
+	node->next = tmp;
+	*head = node;
+	return (node);	
+	}
 	for (i = 0; i < idx - 1; i++)
 	{
 		tmp = tmp->next;
