@@ -6,5 +6,7 @@
 unsigned int binary_to_uint(const char *b);
 int _putchar(char c);
 int binary_check(const char *b);
+int zero_or_one(unsigned long int n);
+void print_binary(unsigned long int n);
 
 #endif
