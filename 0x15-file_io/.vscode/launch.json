@@ -5,7 +5,7 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": ["Requiescat"],
+      "args": ["hello", "world"],
       "stopAtEntry": true,
       "externalConsole": false,
       "cwd": "/home/koko/KOKO/ALX/alx-low_level_programming/0x15-file_io",
