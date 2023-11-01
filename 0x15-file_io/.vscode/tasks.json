@@ -12,7 +12,6 @@
 				"-Werror",
 				"-Wextra",
 				"-std=gnu89",
-				"main.c",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
