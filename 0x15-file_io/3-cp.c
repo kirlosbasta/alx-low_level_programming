@@ -21,10 +21,11 @@ int main(int argc, char **argv)
 	fdr = open(argv[1], O_RDONLY);
 	if (fdr < 0)
 		cp_helper(-1, 0, argv);
-	fdw = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY | O_APPEND, 0664);
+	fdw = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (fdw < 0)
 		cp_helper(0, -1, argv);
-	while (rt == 1024)
+	rt = 1;
+	while (rt > 0)
 	{
 		rt = read(fdr, buf, 1024);
 		if (rt < 0)
