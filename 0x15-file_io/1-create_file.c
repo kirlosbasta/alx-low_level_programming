@@ -22,7 +22,7 @@ int create_file(const char *filename, char *text_content)
 		if (errno == EEXIST)
 		{
 			open(filename, O_TRUNC);
-			return (1);
+			return (-1);
 		}
 		return (-1);
 	}
