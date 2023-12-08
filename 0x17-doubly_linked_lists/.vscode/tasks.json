@@ -12,7 +12,7 @@
 				"-Werror",
 				"-Wextra",
 				"-std=gnu89",
-				"*.c",
+				"${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}",
                 ""
