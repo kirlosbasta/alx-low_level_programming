@@ -33,6 +33,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(key, ht->array[idx]->key) == 0)
 		{
+			free(ht->array[idx]->value);
 			ht->array[idx]->value = item->value;
 			free(item->key);
 			free(item);

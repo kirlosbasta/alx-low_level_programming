@@ -17,6 +17,8 @@ int main(void)
 	idx = key_index((const unsigned char *)"betty", ht->size);
     hash_table_set(ht, "betty", "cool");
 	printf("Key: %s Value: %s\n", ht->array[idx]->key, ht->array[idx]->value);
+	hash_table_set(ht, "betty", "not cool");
+	printf("Key: %s Value: %s\n", ht->array[idx]->key, ht->array[idx]->value);
 	idx = key_index((const unsigned char *)"hetairas", ht->size);
     hash_table_set(ht, "hetairas", "cool");
 	printf("Key: %s Value: %s\n", ht->array[idx]->key, ht->array[idx]->value);
