@@ -1,8 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * @brief 
- * 
+ * hash_table_delete - Delelte hash table
+ * @ht: Hash table
+ *
+ * Return: Nothing
  */
 
 void hash_table_delete(hash_table_t *ht)
