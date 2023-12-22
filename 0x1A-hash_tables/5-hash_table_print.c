@@ -22,11 +22,29 @@ void hash_table_print(const hash_table_t *ht)
 	{
 		if (arr[i] != NULL)
 		{
+			tmp = arr[i];
+			while (tmp)
+			{
+				if (pr > 0)
+				{
+					printf(", ");
+				}
+				printf("'%s': '%s'", arr[i]->key, arr[i]->value);
+				tmp = tmp->next;
+				pr++;
+			}
+		}
+	}
+	printf("}\n");
+}
+
+/*
 			if (pr > 0)
 			{
 				printf(", ");
 			}
 			printf("'%s': '%s'", arr[i]->key, arr[i]->value);
+			fflush(stdout);
 			pr++;
 			if (arr[i]->next != NULL)
 			{
@@ -41,7 +59,4 @@ void hash_table_print(const hash_table_t *ht)
 					tmp = tmp->next;
 				}
 			}
-		}
-	}
-	printf("}\n");
-}
+*/
