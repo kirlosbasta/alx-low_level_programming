@@ -237,6 +237,12 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	return (NULL);
 }
 
+/**
+ * shash_table_print - print the content of ht
+ * @ht: Hash table
+ *
+ * Return: Nothing
+ */
 void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *current;
@@ -259,5 +265,4 @@ void shash_table_print(const shash_table_t *ht)
 		current = current->snext;
 	}
 	printf("}\n");
-	
 }
