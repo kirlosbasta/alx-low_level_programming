@@ -296,3 +296,50 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_delete - Delelte hash table
+ * @ht: Hash table
+ *
+ * Return: Nothing
+ */
+
+void shash_table_delete(shash_table_t *ht)
+{
+	unsigned long int i;
+	shash_node_t *tmp, *tmp2;
+
+	if (ht == NULL)
+	{
+		return;
+	}
+	for (i = 0; i < ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			tmp = ht->array[i];
+			while (tmp)
+			{
+				tmp2 = tmp;
+				tmp = tmp->next;
+				sdelete_item(tmp2);
+			}
+		}
+	}
+	free(ht->array);
+	free(ht);
+}
+
+/**
+ * sdelete_item - Free and delete the item and it's content
+ * @item: Item
+ *
+ * Return: Nothing
+ */
+
+void sdelete_item(shash_node_t *item)
+{
+	free(item->key);
+	free(item->value);
+	free(item);
+}
