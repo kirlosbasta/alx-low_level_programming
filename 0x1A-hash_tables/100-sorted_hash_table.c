@@ -266,3 +266,33 @@ void shash_table_print(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
+
+/**
+ * shash_table_print_rev - print the content of ht in reverse
+ * @ht: Hash table
+ *
+ * Return: Nothing
+ */
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *current;
+	int pr = 0;
+
+	if (ht == NULL)
+	{
+		return;
+	}
+	current = ht->stail;
+	putchar('{');
+	while (current)
+	{
+		if (pr > 0)
+		{
+			printf(", ");
+		}
+		printf("'%s': '%s'", current->key, current->value);
+		pr++;
+		current = current->sprev;
+	}
+	printf("}\n");
+}
