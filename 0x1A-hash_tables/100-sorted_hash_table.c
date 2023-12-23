@@ -237,3 +237,27 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 	return (NULL);
 }
 
+void shash_table_print(const shash_table_t *ht)
+{
+	shash_node_t *current;
+	int pr = 0;
+
+	if (ht == NULL)
+	{
+		return;
+	}
+	current = ht->shead;
+	putchar('{');
+	while (current)
+	{
+		if (pr > 0)
+		{
+			printf(", ");
+		}
+		printf("'%s': '%s'", current->key, current->value);
+		pr++;
+		current = current->snext;
+	}
+	printf("}\n");
+	
+}
