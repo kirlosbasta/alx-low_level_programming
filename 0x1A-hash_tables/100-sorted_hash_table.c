@@ -177,7 +177,7 @@ void sorted_list(shash_table_t *ht, shash_node_t *item)
 			current->sprev = item;
 			ht->shead = item;
 		}
-		else if (current->snext == NULL && strcmp(item->key, current->key) <= 0)
+		else if (current->snext == NULL)
 		{
 			item->snext = NULL;
 			item->sprev = current;
