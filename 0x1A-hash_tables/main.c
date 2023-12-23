@@ -38,3 +38,8 @@ int main(void)
     hash_table_delete(ht);
     return (EXIT_SUCCESS);
 }
+
+void shash_table_print(const shash_table_t *ht)
+{
+	
+}
